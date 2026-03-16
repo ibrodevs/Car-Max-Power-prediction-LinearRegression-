@@ -1,0 +1,157 @@
+:root {
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #64748b;
+  --accent: #0f766e;
+  --accent-dark: #115e59;
+  --border: #dbe3ef;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, #dff4f1 0%, transparent 35%),
+    radial-gradient(circle at top left, #e6edfb 0%, transparent 40%),
+    var(--bg);
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 28px auto 40px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.metric-item {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.metric-item .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.graph-wrap img {
+  width: 100%;
+  max-width: 720px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: block;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+.columns-list {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+button {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+.result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  font-weight: 600;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

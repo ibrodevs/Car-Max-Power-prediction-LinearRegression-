@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage 3 - Model Web Interface</title>
+  <link rel="stylesheet" href="stage3_styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="card">
+      <h1>Car Max Power Prediction - Stage 3</h1>
+      <p class="subtitle">One-page interface for model demo, metrics, samples, and prediction form.</p>
+    </header>
+
+    <section class="card">
+      <h2>Graph from Stage 1</h2>
+      <p class="small-note">Scatter plot: Actual vs Predicted Max Power (linear regression).</p>
+      <div class="graph-wrap">
+        <img src="stage1_graph.png" alt="Actual vs Predicted Max Power graph" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Accuracy and Error Metrics</h2>
+      <div class="metrics">
+        <div class="metric-item">
+          <div>R2 (Accuracy)</div>
+          <div class="value">91.59%</div>
+        </div>
+        <div class="metric-item">
+          <div>MAE</div>
+          <div class="value">12.46</div>
+        </div>
+        <div class="metric-item">
+          <div>RMSE</div>
+          <div class="value">19.63</div>
+        </div>
+        <div class="metric-item">
+          <div>Rows Used</div>
+          <div class="value">1937</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>10 Samples from Dataset</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Price</th>
+              <th>Year</th>
+              <th>Kilometer</th>
+              <th>Length</th>
+              <th>Width</th>
+              <th>Height</th>
+              <th>Seating</th>
+              <th>Fuel Tank</th>
+              <th>Engine_num</th>
+              <th>Max Torque_num</th>
+              <th>Max Power_num</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>505000</td><td>2017</td><td>87150</td><td>3990.0</td><td>1680.0</td><td>1505.0</td><td>5.0</td><td>35.0</td><td>1198.0</td><td>109.0</td><td>87.0</td></tr>
+            <tr><td>450000</td><td>2014</td><td>75000</td><td>3995.0</td><td>1695.0</td><td>1555.0</td><td>5.0</td><td>42.0</td><td>1248.0</td><td>190.0</td><td>74.0</td></tr>
+            <tr><td>220000</td><td>2011</td><td>67000</td><td>3585.0</td><td>1595.0</td><td>1550.0</td><td>5.0</td><td>35.0</td><td>1197.0</td><td>112.7619</td><td>79.0</td></tr>
+            <tr><td>799000</td><td>2019</td><td>37500</td><td>3995.0</td><td>1745.0</td><td>1510.0</td><td>5.0</td><td>37.0</td><td>1197.0</td><td>113.0</td><td>82.0</td></tr>
+            <tr><td>1950000</td><td>2018</td><td>69000</td><td>4735.0</td><td>1830.0</td><td>1795.0</td><td>7.0</td><td>55.0</td><td>2393.0</td><td>343.0</td><td>148.0</td></tr>
+            <tr><td>675000</td><td>2017</td><td>73315</td><td>4490.0</td><td>1730.0</td><td>1485.0</td><td>5.0</td><td>43.0</td><td>1373.0</td><td>130.0</td><td>91.0</td></tr>
+            <tr><td>2650000</td><td>2017</td><td>75000</td><td>4439.0</td><td>1821.0</td><td>1612.0</td><td>5.0</td><td>51.0</td><td>1995.0</td><td>400.0</td><td>188.0</td></tr>
+            <tr><td>1390000</td><td>2017</td><td>56000</td><td>4670.0</td><td>1814.0</td><td>1476.0</td><td>5.0</td><td>50.0</td><td>1798.0</td><td>250.0</td><td>177.0</td></tr>
+            <tr><td>575000</td><td>2015</td><td>85000</td><td>4331.0</td><td>1822.0</td><td>1671.0</td><td>5.0</td><td>50.0</td><td>1461.0</td><td>200.0</td><td>84.0</td></tr>
+            <tr><td>591000</td><td>2017</td><td>20281</td><td>3985.0</td><td>1734.0</td><td>1505.0</td><td>5.0</td><td>45.0</td><td>1197.0</td><td>115.0</td><td>82.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Predict Max Power</h2>
+      <p class="small-note">Enter feature values, then click <strong>Predict</strong>.</p>
+      <form id="predict-form">
+        <div class="form-grid">
+          <div class="form-field"><label for="Price">Price</label><input id="Price" type="number" step="any" required value="700000" /></div>
+          <div class="form-field"><label for="Year">Year</label><input id="Year" type="number" step="any" required value="2018" /></div>
+          <div class="form-field"><label for="Kilometer">Kilometer</label><input id="Kilometer" type="number" step="any" required value="60000" /></div>
+          <div class="form-field"><label for="Length">Length</label><input id="Length" type="number" step="any" required value="4200" /></div>
+          <div class="form-field"><label for="Width">Width</label><input id="Width" type="number" step="any" required value="1750" /></div>
+          <div class="form-field"><label for="Height">Height</label><input id="Height" type="number" step="any" required value="1550" /></div>
+          <div class="form-field"><label for="SeatingCapacity">Seating Capacity</label><input id="SeatingCapacity" type="number" step="any" required value="5" /></div>
+          <div class="form-field"><label for="FuelTankCapacity">Fuel Tank Capacity</label><input id="FuelTankCapacity" type="number" step="any" required value="45" /></div>
+          <div class="form-field"><label for="EngineNum">Engine_num</label><input id="EngineNum" type="number" step="any" required value="1200" /></div>
+          <div class="form-field"><label for="MaxTorqueNum">Max Torque_num</label><input id="MaxTorqueNum" type="number" step="any" required value="120" /></div>
+        </div>
+        <button type="submit">Predict</button>
+      </form>
+      <div id="result" class="result" aria-live="polite">Prediction result will appear here.</div>
+    </section>
+  </div>
+
+  <script>
+    const intercept = -607.0529363740993;
+    const coefficients = {
+      Price: 0.0000054412359917230505,
+      Year: 0.3189123771272044,
+      Kilometer: -0.000020149414287201353,
+      Length: 0.017564217122107078,
+      Width: 0.004467015788381446,
+      Height: -0.03364433099054932,
+      SeatingCapacity: -10.72204349394135,
+      FuelTankCapacity: 0.1156355138621228,
+      EngineNum: 0.04470062636785933,
+      MaxTorqueNum: 0.12425641474963861
+    };
+
+    document.getElementById("predict-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const values = {
+        Price: parseFloat(document.getElementById("Price").value),
+        Year: parseFloat(document.getElementById("Year").value),
+        Kilometer: parseFloat(document.getElementById("Kilometer").value),
+        Length: parseFloat(document.getElementById("Length").value),
+        Width: parseFloat(document.getElementById("Width").value),
+        Height: parseFloat(document.getElementById("Height").value),
+        SeatingCapacity: parseFloat(document.getElementById("SeatingCapacity").value),
+        FuelTankCapacity: parseFloat(document.getElementById("FuelTankCapacity").value),
+        EngineNum: parseFloat(document.getElementById("EngineNum").value),
+        MaxTorqueNum: parseFloat(document.getElementById("MaxTorqueNum").value)
+      };
+
+      const invalid = Object.values(values).some((v) => Number.isNaN(v));
+      const resultEl = document.getElementById("result");
+
+      if (invalid) {
+        resultEl.textContent = "Please enter valid numeric values in all fields.";
+        return;
+      }
+
+      let prediction = intercept;
+      prediction += coefficients.Price * values.Price;
+      prediction += coefficients.Year * values.Year;
+      prediction += coefficients.Kilometer * values.Kilometer;
+      prediction += coefficients.Length * values.Length;
+      prediction += coefficients.Width * values.Width;
+      prediction += coefficients.Height * values.Height;
+      prediction += coefficients.SeatingCapacity * values.SeatingCapacity;
+      prediction += coefficients.FuelTankCapacity * values.FuelTankCapacity;
+      prediction += coefficients.EngineNum * values.EngineNum;
+      prediction += coefficients.MaxTorqueNum * values.MaxTorqueNum;
+
+      resultEl.textContent = `Predicted Max Power: ${prediction.toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>
